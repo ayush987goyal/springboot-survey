@@ -24,8 +24,8 @@ public class WelcomeController {
     }
 
     @RequestMapping("/dynamic-config")
-    public Map dynamiConfiguration() {
-        Map map = new HashMap();
+    public Map<String, Comparable> dynamiConfiguration() {
+        Map<String, Comparable> map = new HashMap<String, Comparable>();
         map.put("message", basicConfiguration.getMessage());
         map.put("number", basicConfiguration.getNumber());
         map.put("value", basicConfiguration.isValue());
