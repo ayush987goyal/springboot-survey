@@ -1,6 +1,7 @@
 package com.goyal.springsurvey.controller;
 
 import com.goyal.springsurvey.model.Question;
+import com.goyal.springsurvey.model.Survey;
 import com.goyal.springsurvey.service.SurveyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -15,6 +16,11 @@ public class SurveyController {
 
     @Autowired
     private SurveyService surveyService;
+
+    @GetMapping("/surveys")
+    public List<Survey> retrieveAllSurveys() {
+        return surveyService.retrieveAllSurveys();
+    }
 
     @GetMapping("/surveys/{surveyId}/questions")
     public List<Question> retrieveQuestionsForSurvey(@PathVariable String surveyId) {
